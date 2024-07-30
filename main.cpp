@@ -113,24 +113,24 @@ int main()
 		std::string connectionString = "host=127.0.0.1 port=5432 dbname=DataBaseCxx user=postgres password=1209R";
 		clientbd manager(connectionString);
 
-		manager.clear_clients_table(); // удаление табл
-		manager.clear_clients_phones(); // удаление табл
-		manager.add_new_client("Alex", "Stuart", "AS@gmail.com"); // 1 добавление клиента
-		manager.add_new_client("Max", "Power", "MP@gmail.com"); // 1 добавление клиента
+		manager.clear_clients_table(); // ГіГ¤Г Г«ГҐГ­ГЁГҐ ГІГ ГЎГ«
+		manager.clear_clients_phones(); // ГіГ¤Г Г«ГҐГ­ГЁГҐ ГІГ ГЎГ«
+		manager.add_new_client("Alex", "Stuart", "AS@gmail.com"); // 1 Г¤Г®ГЎГ ГўГ«ГҐГ­ГЁГҐ ГЄГ«ГЁГҐГ­ГІГ 
+		manager.add_new_client("Max", "Power", "MP@gmail.com"); // 1 Г¤Г®ГЎГ ГўГ«ГҐГ­ГЁГҐ ГЄГ«ГЁГҐГ­ГІГ 
 
-		manager.add_telephone("+7 999 568-543-33", "1"); // 2 добавление номера к сущ-у клиенту 
-		manager.add_telephone("+7 999 990-99-99", "2");// 2 добавление номера к сущ-у клиенту 
+		manager.add_telephone("+7 999 568-543-33", "1"); // 2 Г¤Г®ГЎГ ГўГ«ГҐГ­ГЁГҐ Г­Г®Г¬ГҐГ°Г  ГЄ Г±ГіГ№-Гі ГЄГ«ГЁГҐГ­ГІГі 
+		manager.add_telephone("+7 999 990-99-99", "2");// 2 Г¤Г®ГЎГ ГўГ«ГҐГ­ГЁГҐ Г­Г®Г¬ГҐГ°Г  ГЄ Г±ГіГ№-Гі ГЄГ«ГЁГҐГ­ГІГі 
 
-		manager.change_inform("1", "Alex", "Stuart", "AlexStuart@gmail.com"); // 3 смена информации об клиенте
+		manager.change_inform("1", "Alex", "Stuart", "AlexStuart@gmail.com"); // 3 Г±Г¬ГҐГ­Г  ГЁГ­ГґГ®Г°Г¬Г Г¶ГЁГЁ Г®ГЎ ГЄГ«ГЁГҐГ­ГІГҐ
 
-		manager.add_telephone("+7 999 534-333-21", "1"); // 4 добавление номера к сущ-у клиенту
+		manager.add_telephone("+7 999 534-333-21", "1"); // 4 Г¤Г®ГЎГ ГўГ«ГҐГ­ГЁГҐ Г­Г®Г¬ГҐГ°Г  ГЄ Г±ГіГ№-Гі ГЄГ«ГЁГҐГ­ГІГі
 
-		manager.delete_phone("+7 999 568-543-33", "1"); // 5 удаление номера телефона
+		manager.delete_phone("+7 999 568-543-33", "1"); // 5 ГіГ¤Г Г«ГҐГ­ГЁГҐ Г­Г®Г¬ГҐГ°Г  ГІГҐГ«ГҐГґГ®Г­Г 
 
-		manager.delete_client("2"); // удаление клиенты из БД
+		manager.delete_client("2"); // ГіГ¤Г Г«ГҐГ­ГЁГҐ ГЄГ«ГЁГҐГ­ГІГ» ГЁГ§ ГЃГ„
 
 		manager.find_client
-		(  "SELECT c.client_id, c.first_name, c.last_name, c.email, p.phone_number "
+		       ("SELECT c.client_id, c.first_name, c.last_name, c.email, p.phone_number "
 			"FROM clients c LEFT JOIN phones p ON c.client_id = p.client_id "
 			"WHERE c.first_name = 'Alex'");
 	}
